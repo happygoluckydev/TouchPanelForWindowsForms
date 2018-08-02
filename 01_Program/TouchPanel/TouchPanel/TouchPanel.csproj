@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CE0FCC1-E5F5-487F-B19A-E23230AC4BDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TouchPanel</RootNamespace>
+    <AssemblyName>TouchPanel</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculator.cs" />
+    <Compile Include="PinchData.cs" />
+    <Compile Include="PinchEventArgs.cs" />
+    <Compile Include="PinchType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SwipeData.cs" />
+    <Compile Include="SwipeDirection.cs" />
+    <Compile Include="SwipeEventArgs.cs" />
+    <Compile Include="TouchEventArgs.cs" />
+    <Compile Include="TouchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TouchPanel.designer.cs">
+      <DependentUpon>TouchPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TouchPoint.cs" />
+    <Compile Include="Win32ApiWrapper.cs" />
+    <Compile Include="DerivedControl\DrawPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DerivedControl\DrawPanel.designer.cs">
+      <DependentUpon>DrawPanel.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TouchPanel.resx">
+      <DependentUpon>TouchPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DerivedControl\DrawPanel.resx">
+      <DependentUpon>DrawPanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
